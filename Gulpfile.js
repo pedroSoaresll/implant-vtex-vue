@@ -1,13 +1,11 @@
-// npm i --save-dev gulp gulp-uglify gulp-sass gulp-babel gulp-plumber gulp-concat babel-core gulp-tap gulp-file 
+// npm i --save-dev gulp gulp-uglify gulp-sass gulp-babel gulp-plumber gulp-concat babel-core babel-preset-es2015
 
 const gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	sass = require('gulp-sass'),
 	babel = require('gulp-babel'),
 	plumber = require('gulp-plumber'),
-	concat = require('gulp-concat'),
-	tap = require('gulp-tap'),
-	newfile = require('gulp-file');
+	concat = require('gulp-concat');
 
 
 const store = 'mude-o-nome-da-loja-';
@@ -23,24 +21,6 @@ const listFilesComponents = [
 	'./vue/components/**/*.js',
 	'./vue/App.js'
 ];
-
-// const contentAppJs = `
-// 	new Vue({
-// 		el: '${store}-app'
-// 	})
-// `;
-
-// // caso for uma implantação da estrutura do vue
-// gulp.task('structure:vue', function () {
-// 	return gulp.src('./vue')
-// 		.pipe(tap(function (file) {
-// 			console.log(file)
-// 			const fileName = "App.js"
-
-// 			return newfile(fileName, contentAppJs)
-// 				.pipe(gulp.dest('vue'))
-// 		}))
-// })
 
 
 gulp.task('vue:components', function () {
